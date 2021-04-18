@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-9">
+        <div class="app-card">{{title}} Book </div>
+        <div class="app-card" style="padding-left: 15px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8" style="
+                    margin-top: 6px;
+                    margin-bottom: 6px;"><input type="search" name=#ngModel, class="form-control" id="search-input" 
+                        placeholder="Search by name, author or ISBN" aria-label="Search for..." autocomplete="off" [(ngModel)]="searchString"
+                        spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" 
+                        aria-owns="algolia-autocomplete-listbox-0" 
+                        dir="auto" ></div>
+                        <div class="col-2"><i class="material-icons padding-sm right-align-icon" (click)="clear()">Clear</i></div>
+                        <div class="col-2"><i class="material-icons padding-sm right-align-icon" (click)="search()">Search</i></div>
+                </div>
+            </div>
+        </div>
+        
+      <ngx-datatable [rows]="rows" [columnMode]="'force'" class="material"
+      [headerHeight]="50" [footerHeight]="40" [rowHeight]="'auto'">
+      <ngx-datatable-column *ngFor="let column of columns" [flexGrow]="1" [name]="column.name" [prop]="column.prop"
+        [sortable]="false"></ngx-datatable-column>
+      <ngx-datatable-column [width]="100" *ngIf=showIssueBtn [canAutoResize]="false" [sortable]="false">
+        <ng-template   ngx-datatable-header-template class="action" name="action" placement="right">
+          Action
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template class="action" placement="right">
+          <span (click)="issue(row)" tooltip="Issue Book" container="body">
+            <i class="material-icons padding-sm">Issue</i>
+          </span>
+        </ng-template>
+        
+      </ngx-datatable-column>
+    </ngx-datatable>
+  
+    </div>
+    <div class="col-3" [hidden]="!isIssue && !isReturn">
+      <div class="app-card">{{this.modalHeader}} Book
+      </div>
+      <div class="app-card form-container">
+        <form #addBook="ngForm">
+          <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" [disabled]="isReturn" #name="ngModel" name="username"  [(ngModel)]="username" class="form-control" id="username" placeholder="Enter Name" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" [disabled]="true" #name="ngModel" name="name"  [(ngModel)]="book.name" class="form-control" id="name" placeholder="Enter Name" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Author</label>
+            <input type="text" #author="ngModel"  [disabled]="true" name="author" [(ngModel)]="book.author" class="form-control" id="author" placeholder="Enter Author" required>
+          </div>
+          <div class="form-group">
+            <label for="name">ISBN</label>
+            <input type="number" #isbn="ngModel"  [disabled]="true" name="isbn" [(ngModel)]="book.isbn" class="form-control" id="isbn" placeholder="Enter ISBN" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Number of Copies</label>
+            <input type="number" #copies="ngModel"  [disabled]="true" name="copies" [(ngModel)]="book.copies === null ? 0 : book.copies.length" class="form-control" id="copies" placeholder="Enter Number of Copies" required>
+          </div>
+          <div *ngIf=showError style="color:red">
+            Book Limit has reached for the user
+        </div>
+          <div class="row margin-top-sm">
+            <button type="submit"  [disabled]="isView" (click)="clear()" class="btn app-button app-button-secondary">Close</button>
+            <button type="submit"  [disabled]="isView" (click)="submit()"  class="btn app-button app-button-primary">{{submitLabel}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+      
+  

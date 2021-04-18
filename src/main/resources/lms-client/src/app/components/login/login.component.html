@@ -1,0 +1,97 @@
+<!-- Owner : Jyothi Reddy Guduru
+functionality - Jyothi Reddy Guduru
+UI - Jyothi Reddy Guduru
+Last modified : 10/27/2020-->
+
+<div *ngIf=showLogin  class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+                <form role="loginform" method="post" action="" autocomplete="off">
+                    <fieldset>
+                        <p> Sign into your account here</p>
+                        <div class="login-form-group">
+                            Username
+                            <input type="text" name="loginusername" [(ngModel)]="user.username" id="loginusername" pattern="[a-zA-Z0-9]+" ng-required="true"
+                                class="form-control input-lg" placeholder="Username">
+                        </div>
+                        <div class="login-form-group">
+                            Password
+                            <input type="password" name="loginpassword"  [(ngModel)]="user.password" id="loginpassword" class="form-control input-lg"
+                                placeholder="............." ng-required="true">
+                        </div>
+                        <div *ngIf=showLoginErrorMsg style="color:red">
+                            {{loginErrorMsg}}
+                        </div>
+    
+                        <div class="verticalalign">
+                            <button class="button" id="signinbtn" style="
+                            margin-right: 15px !important;
+                        " (click)="showSignupForm()" name="signin" value="signin"><span>SIGN
+                                    UP</span></button>
+                            <button class="button" style="background-color:cornflowerblue" (click)="logIn()" name="signin" value="signin"><span>SIGN
+                                        IN</span></button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf=!showLogin  class="container-fluid" > 
+    <div class="container" style="padding-top: 30px !important;">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+                <form role="signinform" method="post" action="" autocomplete="off">
+                    <fieldset>
+                        <p> Sign up here</p>
+                        <div class="login-form-group">
+                            Username
+                            <input type="text" name="username"  [(ngModel)]="signinuser.username" id="username" pattern="[a-zA-Z0-9]+" required
+                                class="form-control input-lg" placeholder="Username">
+                        </div>
+                        <div class="login-form-group">
+                            Password
+                            <input type="password" name="password"  [(ngModel)]="signinuser.password" id="password" class="form-control input-lg"
+                                placeholder="............." required>
+                        </div>
+                        <div class="login-form-group">
+                            Re-enter Password
+                            <input type="password" name="repassword"  [(ngModel)]="signinuser.repassword" id="repassword" class="form-control input-lg"
+                                placeholder="............." required>
+                        </div>
+                        <div class="login-form-group">
+                            Email Address
+                            <input type="email" name="email" id="email"  [(ngModel)]="signinuser.emailAddress" class="form-control input-lg"
+                                placeholder="............." required>
+                        </div>
+                        <div class="login-form-group">
+                            User Type
+                                <select name="usertype" id="usertype" [(ngModel)]="signinuser.userType" class="form-control input-lg" required>
+                                    <option value="NULL" selected>Select User Type</option>
+                                    <option value="STUDENT">Student</option>
+                                    <option value="FACULTY">Faculty</option>
+                                  </select>
+                        </div>
+                        <div *ngIf="showSigninErrorMsg" style="color:red">
+                            {{errorMsg}}
+                        </div>
+                        <div *ngIf="showSigninSuccessMsg" style="color:green">
+                            {{successmessage}}
+                        </div>
+                        
+                        <div class="verticalalign">
+                            <button class="button" (click)="register()" style="
+                            margin-right: 15px !important;" (click)="closeSignupForm()" name="signin" value="signin"><span>CLOSE</span></button>
+                            <button class="button" (click)="register()" style="background-color:cornflowerblue" name="signin" value="signin"><span>REGISTER</span></button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div> <!-- row-fluid -->
+    </div>

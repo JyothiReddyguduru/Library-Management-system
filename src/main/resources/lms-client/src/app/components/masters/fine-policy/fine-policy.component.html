@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-9">
+        <div class="app-card">Fine Policy        
+            <!-- <i class="material-icons padding-sm right-align-icon" (click)="add()">Add</i> -->
+        </div>
+        <ngx-datatable [rows]="rows" [columnMode]="'force'" class="material" [headerHeight]="50" [footerHeight]="40"
+        [rowHeight]="'auto'">
+        <ngx-datatable-column *ngFor="let column of columns" [flexGrow]="1" [name]="column.name" [prop]="column.prop"
+            [sortable]="false"></ngx-datatable-column>
+        <ngx-datatable-column [width]="100" *ngIf=false [canAutoResize]="false" [sortable]="false">
+            <ng-template ngx-datatable-header-template class="action" name="action" placement="right">
+                Action
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template class="action" placement="right">
+                <span (click)="edit(row)" tooltip="Edit Rule" container="body">
+                    <i class="material-icons padding-sm">Edit</i>
+                </span>
+            </ng-template>
+
+        </ngx-datatable-column>
+    </ngx-datatable>
+    </div>
+    <div class="col-3" [hidden]="!isEdit && !isAdd">
+        <div class="app-card">{{modalHeader}} Rule
+        </div>
+        <div class="app-card form-container">
+            <form #addEditRule="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" #name="ngModel" [disabled]="isEdit" [(ngModel)]="rule.name" name="name"
+                        class="form-control" id="username" placeholder="Enter Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Label</label>
+                    <input type="text" #label="ngModel" name="label" [(ngModel)]="rule.label" class="form-control"
+                        id="label" placeholder="Enter Label" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Fine Amount Per Day</label>
+                    <input type="text" #author="ngModel" name="author" [(ngModel)]="rule.finePerDay"
+                        class="form-control" id="author" placeholder="Enter Author" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">User Type</label>
+                    <select required class="form-control"  name="userType" id="userType" [(ngModel)]="rule.userType">
+                            <option value="null">Select User Type</option> <!-- not selected / blank option -->
+                            <option value="STUDENT">Student</option> <!-- interpolation -->
+                            <option value="FACULTY">Faculty</option>
+                    </select>
+                </div>
+                <div class="row margin-top-sm">
+                    <button type="submit" [disabled]="isView" (click)="clear()"
+                        class="btn app-button app-button-secondary">Close</button>
+                    <button type="submit" [disabled]="isView" (click)="submit()"
+                        class="btn app-button app-button-primary">{{submitLabel}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

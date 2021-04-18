@@ -1,0 +1,573 @@
+@import "_utils";
+
+.app-card {
+    box-shadow: 0px 0px 5px 0px rgba(90, 76, 76, 0.13);
+    min-height: 50px;
+    line-height: 50px;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+.form-group { 
+    margin-bottom: 1px !important;
+}
+
+.login-form-group {
+    margin-bottom: 15px !important;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: 0rem;
+    line-height: 20px !important;
+    font-size: medium !important;
+    font-weight: normal !important;
+}
+.form-control {
+    border-radius: 0% !important;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    line-height: 20px !important;
+}
+
+.margin-top-sm {
+    margin-top : 20px !important;
+}
+
+.right-align-icon {
+    float: right;
+    padding-right:40px;
+    cursor: pointer;
+    color : $action-primary-hover;
+    font-weight: normal;
+}
+.app-button {
+    color: white !important;
+    border: 0 !important;
+    height: 35px;
+    min-width: 110px;
+    border-radius: 0px !important;
+    float: right;
+    cursor: pointer;
+    min-width: 30px;
+    display: block;
+    margin-left: 10px;
+    &-primary {
+        background: $action-primary-hover !important;
+        &:disabled {
+            pointer-events: none !important;
+        } 
+    }
+    &-secondary {
+        background: $action-primary !important;
+        &:disabled {
+            pointer-events: none !important;
+        } 
+    }
+}
+
+
+.form-container {
+    padding :20px; 
+}
+/* ngx-datatable customization */
+.ngx-datatable {
+    .material-icons {
+        line-height: 2px;
+        cursor: pointer;
+        font-size: 15px;
+        color : $action-primary-hover;
+    }
+}
+
+.ngx-datatable.material {
+    box-shadow: 0px 0px 5px 0px rgba(90, 76, 76, 0.13);
+}
+
+.ngx-datatable.material.custom {
+    padding-left: 10px;
+}
+
+.ngx-datatable .datatable-header {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #ccd4d6;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 1rem 2rem;
+    font-size: 12px;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+
+}
+
+.ngx-datatable .datatable-body .datatable-body-row > div {
+    display: flex;
+    border-bottom: 1px solid #ccd4d6;
+}
+
+.ngx-datatable .datatable-footer {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.ngx-datatable.material .empty-row {
+    height: 50px;
+    text-align: -webkit-center;
+    padding: 0;
+    vertical-align: middle;
+    border-top: 0;
+    line-height: 50px;
+}
+
+.ngx-datatable.material .datatable-body .progress-linear .container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: translate(0, 0) scale(1, 1);
+    transform: translate(0, 0) scale(1, 1);
+    background-color: transparent;
+}
+
+.ngx-datatable.material .datatable-body .progress-linear .container .bar {
+    background-color: $background;
+    //border-bottom: 1px solid #ccd4d6;
+    transition: all 0.5s linear;
+    -webkit-animation: query 1s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation: query 1s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: -webkit-transform 0.5s linear;
+    transition: transform 0.5s linear;
+    transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+}
+
+.ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    //background-color: #eaeaea;
+}
+
+.datatable-body-row.active.datatable-row-right datatable-row-group.datatable-body-cell {
+    background-color: #eaeaea;
+}
+
+.ngx-datatable.material.single-selection .datatable-body-row.active,
+.ngx-datatable.material.single-selection
+.datatable-body-row.active
+.datatable-row-group,
+.ngx-datatable.material.multi-selection .datatable-body-row.active,
+.ngx-datatable.material.multi-selection
+.datatable-body-row.active
+.datatable-row-group,
+.ngx-datatable.material.multi-click-selection .datatable-body-row.active,
+.ngx-datatable.material.multi-click-selection
+.datatable-body-row.active
+.datatable-row-group,
+.ngx-datatable.material.custom.multi-click-selection
+.datatable-body-row.active
+.datatable-row-group {
+background-color: #e7e7e7;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row.active .datatable-row-right,
+.ngx-datatable.material.custom .datatable-body .datatable-body-row.active .datatable-row-right {
+    background-position: 0 0;
+    background-color: #e7e7e7;
+    background-repeat: repeat-y;
+    background-image: none;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row:hover .datatable-row-right,
+.ngx-datatable.material.custom .datatable-body .datatable-body-row:hover .datatable-row-right {
+    background-position: 0 0;
+    background-color: #eeeeee;
+    background-repeat: repeat-y;
+    background-image: none;
+}
+
+.ngx-datatable.custom .datatable-header .datatable-row-right {
+    background-image: none;
+}
+
+ngx-datatable .datatable-body .datatable-body-row>div:hover{
+    background-color: #eeeeee;
+}
+
+.ngx-datatable.material .datatable-body .datatable-row-right {
+    background-position: 0 0;
+    background-color: #fff;
+    background-repeat: repeat-y;
+    background-image: none;
+}
+
+.ngx-datatable.material.single-selection .datatable-body-row.active:hover,
+.ngx-datatable.material.custom.single-selection .datatable-body-row.active:hover,
+.ngx-datatable.material.single-selection
+.datatable-body-row.active:hover
+.datatable-row-group,
+.ngx-datatable.material.multi-selection .datatable-body-row.active:hover,
+.ngx-datatable.material.custom.multi-selection .datatable-body-row.active:hover,
+.ngx-datatable.material.custom.multi-selection .datatable-body-row.active,
+.ngx-datatable.material.multi-selection
+.datatable-body-row.active:hover
+.datatable-row-group,
+.ngx-datatable.material.multi-click-selection .datatable-body-row.active:hover,
+.ngx-datatable.material.custom.multi-click-selection .datatable-body-row.active
+.ngx-datatable.material.multi-click-selection
+.datatable-body-row.active:hover
+.datatable-row-group {
+background-color: #e7e7e7;
+}
+
+.ngx-datatable.material .datatable-body .datatable-row-right {
+    .datatable-body-cell.sort-active {
+        background-color: #e7e7e7;
+    }
+}
+
+.ngx-datatable .datatable-header .datatable-header-cell .resize-handle {
+    display: none;
+}
+
+.ngx-datatable.material .datatable-body {
+    overflow-y: hidden;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row {
+    &.active {
+        background-color: #e7e7e7;
+    }
+}
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner {
+    white-space: nowrap;
+    height: 50px;
+}
+
+.ngx-datatable.material .datatable-header .datatable-header-cell {
+    padding: 1rem 2rem;
+}
+
+.ngx-datatable .datatable-header .datatable-header-cell.resizeable:hover .resize-handle {
+    visibility: hidden;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 1rem 2rem;
+    font-size: 12px;
+    &.error {
+        color: red;
+    }
+}
+
+.ngx-datatable.material .empty-row {
+    height: 100px;
+    text-align: center;
+    padding: 0;
+    vertical-align: middle;
+    border-top: 0;
+    line-height: 100px;
+    font: {
+        size: $font-xs;
+    };
+    color: $text-gray;
+}
+
+.datatable-checkbox input[type='checkbox']:before {
+    border : 2px solid gray;
+}
+
+.datatable-checkbox input[type='checkbox']:checked:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    height: .5rem;
+    width: 1.3rem;
+    border-color: #0091da;
+    //border-color:#009688
+    border-top-style: none;
+    border-right-style: none;
+}
+
+.datatable-checkbox input[type='checkbox']:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    background: #fff;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+/* Bootstrap customization */
+.modal-content {
+    border-radius: 0px !important;
+    border : none;
+}
+
+.modal-dialog {
+    overflow-y: initial !important;
+}
+
+.modal-body {
+    height: 470px;
+    overflow-y: auto;
+}
+
+.modal-body-sm {
+    height: 90px !important;
+    overflow-y: initial;
+
+    &-center {
+        text-align: center;
+        font-size: 0.8em !important;
+    }
+
+    &-left {
+        text-align: left;
+        font-size: 0.8em !important;
+    }
+}
+
+.modal-body-md {
+    height: 280px !important;
+    overflow-y: initial;
+
+    &-center {
+        text-align: center;
+        font-size: 0.7em !important;
+    }
+
+    &-left {
+        text-align: left;
+        font-size: 0.9em !important;
+    }
+}
+
+.modal-body-md2 {
+    height: 360px !important;
+    overflow-y: initial;
+
+    &-center {
+        text-align: center;
+        font-size: 0.7em !important;
+    }
+
+    &-left {
+        text-align: left;
+        font-size: 0.9em !important;
+    }
+}
+
+.modal-body-lg {
+    height: 440px !important;
+    overflow-y: auto;
+
+    &-left {
+        text-align: left;
+        font-size: 0.9em !important;
+    }
+
+    &-center {
+        text-align: center;
+        font-size: 0.8em !important;
+    }
+}
+
+.modal-header {
+    padding: 5px 20px;
+    font-size: 1em !important;
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 40px;
+    color: $text-gray;
+    font: {
+        family: "OpenSans-Semibold";
+        size: $font-sm;
+    };
+}
+
+.modal-xl {
+    min-width: 1200px;
+}
+
+.app-modal {
+    .app-card {
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.22);
+        .app-form-header {
+            font: {
+                family: "OpenSans-Semibold";
+            };
+            color: $text-gray;
+            &-lg{
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    &-lg {
+        min-width: 1200px;
+    }
+
+    &-md {
+        min-width: 1000px;
+    }
+
+    &-custom-sm {
+        min-width : 600px;
+    }
+
+    &-sm {
+        min-width: 300px;
+    }
+}
+
+/* Date picker customization*/
+.cdk-overlay-container {
+    z-index: 1060 !important;
+}
+
+/* toaster customization */
+.toast-container {
+    font-size: smaller;
+}
+
+#test > .tooltip-inner {
+    background-color: #e96f5a !important;
+    color: red !important;
+}
+
+#test > .tooltip.top .tooltip-arrow:before,
+#test > .tooltip.top .tooltip-arrow {
+    border-top-color: #5e1807 !important;
+}
+
+/*typeahead customization*/
+.dropdown {
+    top: 64px;
+}
+
+.dropdown-menu {
+    width: inherit;
+
+    .dropdown-item {
+        white-space: normal;
+        padding: .25rem 1.5rem;
+        font-size: smaller;
+    }
+}
+
+/** owl date picker customization */
+.owl-dt-control-period-button:hover {
+    .owl-dt-control-button-content {
+        background-color: white;
+        cursor: initial;
+    }
+}
+
+
+/** check list customization*/
+.alert {
+    border-radius: 0;
+    font-size: 0.8em;
+}
+.alert-warning {
+    line-height: 10px;
+    font-size: 0.9em;
+
+    .action {
+        float: right;
+    }
+
+    a {
+        font-size: 0.9em;
+    }
+}
+
+/** remove clear icon in input field */
+/* IE10+ */
+::-ms-clear {
+    display: none;
+}
+
+/* Chrome */
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+    display: none;
+}
+
+  /** pagination customization */
+ .pagination {
+  .page-item {
+    margin: 0px 4px;
+    border: none;
+    color : $text;
+    &.page-disabled {
+      pointer-events: none;
+      .material-icons {
+        color: #a09696;
+      }
+    }
+    &.active, &:hover {
+      .page-link {
+        cursor: pointer;
+        padding: 2px 8px;
+        color: black;
+        background-color: #eaeaea;
+        border-radius: 5px;
+      }
+      .material-icons {
+        color: black;
+      }
+    }
+    .page-link {
+      height: 24px;
+      border : none;
+      line-height: 20px;
+      padding: 2px 8px;
+      .material-icons {
+        line-height: 20px;
+        cursor: pointer;
+      }
+    }
+   }
+ }
+
+ table {
+    tbody {
+        tr {
+            td, th {
+                border-bottom: 1px solid #e9ecef;
+                border-top: none;
+            }
+            .label {
+                color: $text-gray;
+                font: {
+                    size: 13px;
+                    family : $font-regular; 
+                }
+            }
+            .info {
+                color: $text-dark;
+                font: {
+                    size: 13px;
+                    family : $font-semibold;
+                }
+            }
+        }
+    }
+}
+

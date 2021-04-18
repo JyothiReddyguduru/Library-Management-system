@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-9">
+        <div class="app-card">Return Policy        
+        </div>
+        <ngx-datatable [rows]="rows" [columnMode]="'force'" class="material" [headerHeight]="50" [footerHeight]="40"
+        [rowHeight]="'auto'">
+        <ngx-datatable-column *ngFor="let column of columns" [flexGrow]="1" [name]="column.name" [prop]="column.prop"
+            [sortable]="false"></ngx-datatable-column>
+        <ngx-datatable-column [width]="100" [canAutoResize]="false" [sortable]="false">
+            <ng-template ngx-datatable-header-template class="action" name="action" placement="right">
+                Action
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template class="action" placement="right">
+                <span (click)="edit(row)" tooltip="Edit Rule" container="body">
+                    <i class="material-icons padding-sm">Edit</i>
+                </span>
+            </ng-template>
+
+        </ngx-datatable-column>
+    </ngx-datatable>
+    </div>
+    <div class="col-3" [hidden]="!isEdit && !isAdd">
+        <div class="app-card">{{modalHeader}} Rule
+        </div>
+        <div class="app-card form-container">
+            <form #editRule="ngForm"> 
+                <div class="form-group">
+                    <label for="name">User Type</label>
+                    <select required class="form-control" [disabled]="true"  name="userType" id="userType" [(ngModel)]="rule.userType">
+                            <option value="null">Select User Type</option> <!-- not selected / blank option -->
+                            <option value="STUDENT">Student</option> <!-- interpolation -->
+                            <option value="FACULTY">Faculty</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Days</label>
+                    <input type="text" #author="ngModel" name="author" [(ngModel)]="rule.totalLimit"
+                        class="form-control" id="limit" placeholder="Enter book limit" required>
+                </div>
+                <div class="row margin-top-sm">
+                    <button type="submit" [disabled]="isView" (click)="clear()"
+                        class="btn app-button app-button-secondary">Close</button>
+                    <button type="submit" [disabled]="isView" (click)="submit()"
+                        class="btn app-button app-button-primary">{{submitLabel}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

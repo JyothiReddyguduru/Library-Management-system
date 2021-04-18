@@ -1,0 +1,98 @@
+/* <!-- Author : Jyothi Reddy Guduru
+Last modified : 10/28/2020--> */
+
+.navbar {
+    text-decoration: none;
+    /* font-family: 'Orpheus Pro Regular', serif; */
+    font-size: 17px;
+    /* color: #f2f2f2; */
+   /* color: red; */
+    text-align: center;
+    min-height: 50px;
+    border: 1px solid transparent;
+    background-color: black;
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.nav-link {
+    color: white;
+    list-style: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    font-size: 17px;
+    padding: 10px;
+    width: 100%;
+}
+
+.nav-item {
+    padding: 2px 100px;
+}
+
+.nav-item>a {
+    text-align: center;
+    text-decoration: none;
+    /* font-family: 'Orpheus Pro Regular', serif; */
+    color: white;
+}
+
+.nav-item>a:hover {
+    color: #e6e567;
+    text-decoration: none;
+}
+
+.nav-item>a:visited {
+    text-decoration: none;
+}
+
+.nav-item>a:active {
+    color: #e6e567;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.dropdown-menu {
+    background-color: #1c1b1b;
+}
+
+.dropdown-item {
+    display: block;
+    color: white;
+    font-size: 15px;
+    padding: 2px 5px;
+    /* font-family: 'Orpheus Pro Regular', serif; */
+    text-align: center;
+}
+
+.dropdown-item>a {
+    text-decoration: none;
+}
+
+.dropdown-item>a:hover {
+    text-decoration: none;
+    color: #e6e567;
+}
+
+a:focus,
+a:hover {
+    color: #e6e567;
+    text-decoration: none;
+}
+
+/* .footer-copyright {
+    display: grid;
+    background-color: black;
+    color: white;
+    text-align: center;
+  } */

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col">
+        <div class="app-card">{{title}}      
+        </div>
+        <ngx-datatable [rows]="rows" [columnMode]="'force'" class="material" [headerHeight]="50" [footerHeight]="40"
+        [rowHeight]="'auto'">
+        <ngx-datatable-column *ngFor="let column of columns" [flexGrow]="1" [name]="column.name" [prop]="column.prop"
+            [sortable]="false"></ngx-datatable-column>
+        <ngx-datatable-column [width]="100" [canAutoResize]="false" [sortable]="false">
+        </ngx-datatable-column>
+    </ngx-datatable>
+    </div>
+</div>

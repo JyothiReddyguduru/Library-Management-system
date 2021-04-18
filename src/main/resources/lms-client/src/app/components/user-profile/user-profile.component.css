@@ -1,0 +1,10 @@
+.light-text {
+    font-weight: 100 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.dark-text {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}

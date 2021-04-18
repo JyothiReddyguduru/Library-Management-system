@@ -1,0 +1,65 @@
+<div [hidden]="showLoginForm()">
+    <div class="login-container">
+        <app-login (loginEmitter)="OnLogin()"></app-login>
+    </div>
+</div>
+
+<div [hidden]="!showLoginForm()" class="route-container">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" [routerLink]="['/books']" href="#">Easy Reads </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a [routerLink]="['/']" class="nav-link" href="#"> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/profile']">{{username}} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a (click)="logout()" class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 side-nav-conainer" >
+                    <a [routerLink]="['/manageBooks']"  *ngIf="hasType('ADMIN')" class="nav-link" href="#">Manage Books<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/findBook']" *ngIf="hasType('LIBRARIAN')||hasType('FACULTY')||hasType('STUDENT')" class="nav-link" href="#">{{findBooktitle}}<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/returnBook']" *ngIf="hasType('LIBRARIAN')" class="nav-link" href="#">Return Book<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/bookHistory']" class="nav-link" href="#">{{histItemtitle}}<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/finePolicy']" *ngIf="hasRole('EMPLOYEE')"  class="nav-link" href="#">Fine Policy<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/returnPolicy']"  *ngIf="hasRole('EMPLOYEE')" class="nav-link" href="#">Book Limit Policy<span class="sr-only">(current)</span></a>
+                    <a [routerLink]="['/users']" *ngIf="hasRole('EMPLOYEE')"  class="nav-link" href="#">Users<span class="sr-only">(current)</span></a>
+
+                
+                </div>
+                <div class="col-10 route-output-container"  style="left : 150px">
+                    <div class="padding-lg">        <router-outlet></router-outlet>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
